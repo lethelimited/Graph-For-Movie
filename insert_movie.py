@@ -3,7 +3,13 @@ from subprocess import call
 import re
 
 
-YEAR_PATTERN = re.compile('\(\d{4}\)')
+def init():
+    call(['cd ~/Downloads/neo4j-community-3.4.7/bin;./neo4j start'], shell=True)
+    graph = Graph(password='fighting33')
+    return graph
+
+
+YEAR_PATTERN = re.compile('\(\{4}\)')
 existing_genre = []
 
 def init():
