@@ -36,7 +36,7 @@ def insert_movie_into_graph(m_id, m_title, m_genres):
     sys.stdout.write('{}\r' + str(m_id))
     if not movie_match:
         tx.create(movie)
-        for index, m in enumerate(m_genres,start=1):
+        for index, m in enumerate(m_genres, start=1):
             genres = matcher.match("Genres", name=m.replace("\n", "")).first()
             # print(index)
             if genres:
